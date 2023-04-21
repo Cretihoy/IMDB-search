@@ -4,7 +4,7 @@ package com.example.data.model
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
 
-data class MovieModel(
+data class MovieDto(
     @SerializedName("id")
     @Expose
     val id: String, // tt1375666

@@ -13,7 +13,7 @@ data class MovieResponse(
     val expression: String, // Inception
     @SerializedName("results")
     @Expose
-    val results: List<MovieModel>,
+    val results: List<MovieDto>,
     @SerializedName("errorMessage")
     @Expose
     val errorMessage: String

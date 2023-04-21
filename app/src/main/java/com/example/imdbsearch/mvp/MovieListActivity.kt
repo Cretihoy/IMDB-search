@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
-import com.example.data.model.MovieModel
+import com.example.data.model.MovieDto
 import com.example.imdbsearch.R
 import com.example.imdbsearch.movieListRecycler.MovieListAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +37,7 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
         }
     }
 
-    override fun showMovies(movies: List<MovieModel>) {
+    override fun showMovies(movies: List<MovieDto>) {
         adapter.setItems(movies)
     }
 }

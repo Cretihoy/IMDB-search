@@ -1,6 +1,6 @@
 package com.example.data.repository
 
-import com.example.data.model.MovieModel
+import com.example.data.model.MovieDto
 import com.example.data.service.MovieService
 import javax.inject.Inject
 
@@ -9,7 +9,7 @@ class MovieRepositoryImpl
     private val service: MovieService
 ) {
 
-    suspend fun getMoviesByName(name: String): List<MovieModel> {
+    suspend fun getMoviesByName(name: String): List<MovieDto> {
         return service.getMovieByName(name).results
     }
 }
