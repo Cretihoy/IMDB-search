@@ -1,5 +1,6 @@
 package com.example.data.service
 
+import com.example.data.model.MovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -10,5 +11,5 @@ interface MovieService {
     @GET("API/Search/$API_KEY/{movieName}")
     suspend fun getMovieByName(
         @Path("movieName") name: String
-    ): Any
+    ): MovieResponse
 }
