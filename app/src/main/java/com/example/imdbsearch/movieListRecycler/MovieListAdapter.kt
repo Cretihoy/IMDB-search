@@ -30,4 +30,9 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
             poster.load(movie.image)
         }
     }
+
+    fun setItems(movies: List<MovieModel>) {
+        items = movies.toMutableList()
+        notifyDataSetChanged()
+    }
 }
