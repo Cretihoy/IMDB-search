@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="margin_medium">10dp</dimen>
+    <dimen name="title_size">24sp</dimen>
+    <dimen name="description_size">18sp</dimen>
+    <dimen name="corner_radius">16dp</dimen>
+    <dimen name="margin_low">5dp</dimen>
+</resources>
