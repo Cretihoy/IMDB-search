@@ -2,7 +2,10 @@ package com.example.data.di
 
 import com.example.data.BuildConfig
 import com.example.data.service.MovieService
+import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,11 +16,13 @@ import javax.inject.Singleton
 private const val BASE_URL = "https://imdb-api.com/"
 private const val TIMEOUT = 10L
 
+@Module
+@InstallIn(SingletonComponent::class)
 object HiltModule {
 
     @Singleton
     @Provides
-    private fun getOkHttpClient(): OkHttpClient {
+    fun getOkHttpClient(): OkHttpClient {
         return with(OkHttpClient.Builder()) {
             connectTimeout(TIMEOUT, TimeUnit.SECONDS)
             readTimeout(TIMEOUT, TimeUnit.SECONDS)
