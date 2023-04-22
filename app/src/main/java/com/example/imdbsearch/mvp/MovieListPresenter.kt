@@ -20,7 +20,7 @@ class MovieListPresenter
 
     private fun loadMovieByName(name: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            val movies = repository.getMoviesByName(name)
+            val movies = repository.getMovieByName(name)
             viewState.showMovies(movies)
         }
     }

@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.data.model.MovieDto
+import com.example.domain.model.MovieModel
 import com.example.imdbsearch.R
 
 class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
 
-    private var items = mutableListOf<MovieDto>()
+    private var items = mutableListOf<MovieModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
         val itemView = LayoutInflater
@@ -27,11 +27,11 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
             val movie = items[position]
             title.text = movie.title
             description.text = movie.description
-            poster.load(movie.image)
+            poster.load(movie.posterUrl)
         }
     }
 
-    fun setItems(movies: List<MovieDto>) {
+    fun setItems(movies: List<MovieModel>) {
         items = movies.toMutableList()
         notifyDataSetChanged()
     }
