@@ -18,11 +18,11 @@ private const val TIMEOUT = 10L
 
 @Module
 @InstallIn(SingletonComponent::class)
-object HiltModule {
+object DataModuleProviders {
 
     @Singleton
     @Provides
-    fun getOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(): OkHttpClient {
         return with(OkHttpClient.Builder()) {
             connectTimeout(TIMEOUT, TimeUnit.SECONDS)
             readTimeout(TIMEOUT, TimeUnit.SECONDS)
@@ -39,7 +39,7 @@ object HiltModule {
 
     @Singleton
     @Provides
-    fun provideApiBaseService(
+    fun provideMovieService(
         httpClient: OkHttpClient
     ): MovieService {
         return Retrofit.Builder()
