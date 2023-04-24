@@ -1,6 +1,6 @@
 package com.example.data.service
 
-import com.example.data.model.MovieResponse
+import com.example.data.model.movieList.MovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 

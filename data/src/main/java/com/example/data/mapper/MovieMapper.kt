@@ -1,7 +1,7 @@
 package com.example.data.mapper
 
-import com.example.data.model.MovieDto
-import com.example.data.model.MovieResponse
+import com.example.data.model.movieList.MovieDto
+import com.example.data.model.movieList.MovieResponse
 import com.example.domain.model.MovieModel
 import javax.inject.Inject
 
