@@ -8,7 +8,7 @@
     android:scrollbars="vertical">
 
     <ImageView
-        android:id="@+id/current_movie_image"
+        android:id="@+id/current_movie_poster"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
