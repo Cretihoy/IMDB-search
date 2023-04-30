@@ -10,7 +10,7 @@ private const val API_KEY = "k_d34009sc"
 interface MovieService {
 
     @GET("API/Search/$API_KEY/{movieName}")
-    suspend fun getMovieByName(
+    suspend fun getMoviesByName(
         @Path("movieName") name: String
     ): MovieResponse
 
