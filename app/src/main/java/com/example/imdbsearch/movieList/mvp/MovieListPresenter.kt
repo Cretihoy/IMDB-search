@@ -15,12 +15,12 @@ class MovieListPresenter
 ) : MvpPresenter<MovieListView>() {
 
     fun onSearchButtonClicked(name: String) {
-        loadMovieByName(name)
+        loadMoviesByName(name)
     }
 
-    private fun loadMovieByName(name: String) {
+    private fun loadMoviesByName(name: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            val movies = repository.getMovieByName(name)
+            val movies = repository.getMoviesByName(name)
             viewState.showMovies(movies)
         }
     }
