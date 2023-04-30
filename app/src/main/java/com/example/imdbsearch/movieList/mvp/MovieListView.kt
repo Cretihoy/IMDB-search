@@ -1,4 +1,4 @@
-package com.example.imdbsearch.mvp
+package com.example.imdbsearch.movieList.mvp
 
 import com.example.domain.model.MovieModel
 import moxy.MvpView

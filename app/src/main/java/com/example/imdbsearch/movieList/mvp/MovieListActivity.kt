@@ -1,4 +1,4 @@
-package com.example.imdbsearch.mvp
+package com.example.imdbsearch.movieList.mvp
 
 import android.os.Bundle
 import android.widget.Button
@@ -6,7 +6,7 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.MovieModel
 import com.example.imdbsearch.R
-import com.example.imdbsearch.movieListRecycler.MovieListAdapter
+import com.example.imdbsearch.movieList.recycler.MovieListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter

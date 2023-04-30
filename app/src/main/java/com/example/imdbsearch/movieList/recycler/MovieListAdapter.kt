@@ -1,4 +1,4 @@
-package com.example.imdbsearch.movieListRecycler
+package com.example.imdbsearch.movieList.recycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
