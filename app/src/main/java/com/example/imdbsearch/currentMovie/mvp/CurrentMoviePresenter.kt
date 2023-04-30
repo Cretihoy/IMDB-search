@@ -14,7 +14,7 @@ class CurrentMoviePresenter
     private val repository: MovieRepositoryImpl
 ) : MvpPresenter<CurrentMovieView>() {
 
-    private fun loadMovieById(id: String) {
+    fun loadMovieById(id: String) {
         CoroutineScope(Dispatchers.Main).launch {
             val movie = repository.getMovieById(id)
             viewState.showMovie(movie)

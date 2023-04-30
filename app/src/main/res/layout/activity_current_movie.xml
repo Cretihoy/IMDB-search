@@ -13,7 +13,7 @@
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_medium"
-        android:src="@drawable/image" />
+        tools:src="@drawable/image" />
 
     <TextView
         android:id="@+id/current_movie_title"

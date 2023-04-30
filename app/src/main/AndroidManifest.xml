@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImdbSearch"
         tools:targetApi="31">
+        <activity android:name=".currentMovie.mvp.CurrentMovieActivity"/>
         <activity
             android:name=".movieList.mvp.MovieListActivity"
             android:exported="true">

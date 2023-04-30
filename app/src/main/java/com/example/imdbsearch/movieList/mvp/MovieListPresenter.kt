@@ -24,4 +24,8 @@ class MovieListPresenter
             viewState.showMovies(movies)
         }
     }
+
+    fun onItemClicked(id: String) {
+        viewState.openCurrentMovieScreen(id)
+    }
 }

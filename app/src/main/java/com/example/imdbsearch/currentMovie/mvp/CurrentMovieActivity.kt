@@ -12,6 +12,8 @@ import moxy.ktx.moxyPresenter
 import javax.inject.Inject
 import javax.inject.Provider
 
+private const val ID_KEY = "movie_id"
+
 @AndroidEntryPoint
 class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
 
@@ -26,6 +28,13 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_movie)
+
+        val id = intent.getStringExtra(ID_KEY)
+        if (id == null) {
+            finish()
+        } else {
+            presenter.loadMovieById(id)
+        }
     }
 
     override fun showMovie(movie: CurrentMovieModel) {

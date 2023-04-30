@@ -9,6 +9,7 @@ import com.example.imdbsearch.R
 
 class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
 
+    private var action: ((String) -> Unit)? = null
     private var items = mutableListOf<MovieModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
@@ -23,8 +24,9 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
+        val movie = items[position]
         holder.run {
-            val movie = items[position]
+            itemView.setOnClickListener { action?.invoke(movie.id) }
             title.text = movie.title
             description.text = movie.description
             poster.load(movie.posterUrl)
@@ -34,5 +36,9 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListViewHolder>() {
     fun setItems(movies: List<MovieModel>) {
         items = movies.toMutableList()
         notifyDataSetChanged()
+    }
+
+    fun setOnClickListener(clickAction: (String) -> Unit) {
+        action = clickAction
     }
 }

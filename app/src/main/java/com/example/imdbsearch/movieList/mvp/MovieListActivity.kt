@@ -1,17 +1,22 @@
 package com.example.imdbsearch.movieList.mvp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.MovieModel
 import com.example.imdbsearch.R
+import com.example.imdbsearch.currentMovie.mvp.CurrentMovieActivity
 import com.example.imdbsearch.movieList.recycler.MovieListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
 import javax.inject.Provider
+
+private const val ID_KEY = "movie_id"
 
 @AndroidEntryPoint
 class MovieListActivity : MvpAppCompatActivity(), MovieListView {
@@ -32,6 +37,10 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
 
         recycler.adapter = adapter
 
+        adapter.setOnClickListener { id ->
+            presenter.onItemClicked(id)
+        }
+
         buttonSearch.setOnClickListener {
             presenter.onSearchButtonClicked(editText.text.toString())
         }
@@ -39,5 +48,11 @@ class MovieListActivity : MvpAppCompatActivity(), MovieListView {
 
     override fun showMovies(movies: List<MovieModel>) {
         adapter.setItems(movies)
+    }
+
+    override fun openCurrentMovieScreen(id: String) {
+        val intent = Intent(this, CurrentMovieActivity::class.java)
+        intent.putExtra(ID_KEY, id)
+        startActivity(intent)
     }
 }
