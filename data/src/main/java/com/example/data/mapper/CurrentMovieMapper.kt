@@ -15,7 +15,10 @@ class CurrentMovieMapper
             posterUrl = dto.image,
             fullTitle = dto.fullTitle,
             description = dto.plot,
-            actors = dto.actorList.map { mapActor(it) }
+            actors = dto.actorList.map { mapActor(it) },
+            runtime = dto.runtimeStr,
+            rating = dto.imDbRating,
+            genres = dto.genres,
         )
     }
 

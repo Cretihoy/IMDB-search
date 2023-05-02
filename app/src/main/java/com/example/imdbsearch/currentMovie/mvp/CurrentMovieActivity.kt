@@ -1,8 +1,12 @@
 package com.example.imdbsearch.currentMovie.mvp
 
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
+import android.widget.MediaController
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.domain.model.CurrentMovieModel
@@ -22,6 +26,9 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
     private val poster: ImageView by lazy { findViewById(R.id.current_movie_poster) }
     private val title: TextView by lazy { findViewById(R.id.current_movie_title) }
     private val description: TextView by lazy { findViewById(R.id.current_movie_description) }
+    private val runtime: TextView by lazy { findViewById(R.id.current_movie_runtime) }
+    private val rating: TextView by lazy { findViewById(R.id.current_movie_rating) }
+    private val genres: TextView by lazy { findViewById(R.id.current_movie_genres) }
     val recycler: RecyclerView by lazy { findViewById(R.id.current_movie_recycler_actor) }
     val adapter = CurrentMovieAdapter()
 
@@ -47,6 +54,9 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
         poster.load(movie.posterUrl)
         title.text = movie.fullTitle
         description.text = movie.description
+        runtime.text = movie.runtime
+        rating.text = movie.rating
+        genres.text = movie.genres
         adapter.setItems(movie.actors)
     }
 }

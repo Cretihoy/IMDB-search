@@ -5,5 +5,8 @@ data class CurrentMovieModel(
     val posterUrl: String?,
     val fullTitle: String?,
     val description: String?,
-    val actors: List<ActorModel>
+    val actors: List<ActorModel>,
+    val runtime: String?,
+    val rating: String?,
+    val genres: String?
 )
