@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -38,4 +39,14 @@
         android:textColor="?colorOnSecondary"
         android:textSize="@dimen/description_size"
         tools:text="This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/current_movie_recycler_actor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_base" />
 </LinearLayout>
