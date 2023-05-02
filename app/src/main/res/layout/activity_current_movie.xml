@@ -24,7 +24,7 @@
         android:layout_margin="@dimen/margin_medium"
         android:textAlignment="center"
         android:textColor="?colorOnSecondary"
-        android:textSize="@dimen/title_size"
+        android:textSize="@dimen/text_big_size"
         android:textStyle="bold"
         tools:text="Super cat" />
 
@@ -37,7 +37,7 @@
         android:layout_marginEnd="@dimen/margin_medium"
         android:textAlignment="center"
         android:textColor="?colorOnSecondary"
-        android:textSize="@dimen/description_size"
+        android:textSize="@dimen/text_medium_size"
         tools:text="This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero" />
 
     <androidx.recyclerview.widget.RecyclerView

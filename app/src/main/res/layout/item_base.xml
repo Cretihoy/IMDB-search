@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/item_base_image"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
+            android:layout_width="@dimen/image_small_size"
+            android:layout_height="@dimen/image_small_size"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_low"
             tools:src="@drawable/image" />
@@ -27,10 +27,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="4dp"
+            android:layout_margin="@dimen/margin_low"
             android:textAlignment="center"
             android:textColor="?colorOnPrimary"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_low_size"
             android:textStyle="bold"
             tools:text="Elvina Gafieva" />
 
@@ -39,12 +39,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="@dimen/margin_low"
+            android:layout_marginEnd="@dimen/margin_low"
+            android:layout_marginBottom="@dimen/margin_low"
             android:textAlignment="center"
             android:textColor="?colorOnPrimary"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_small_size"
             tools:text="Elvina Gafieva" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
