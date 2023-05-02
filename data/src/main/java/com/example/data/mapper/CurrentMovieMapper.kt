@@ -13,7 +13,7 @@ class CurrentMovieMapper
         return CurrentMovieModel(
             id = dto.id,
             posterUrl = dto.image,
-            title = dto.title,
+            fullTitle = dto.fullTitle,
             description = dto.plot,
             actors = dto.actorList.map { mapActor(it) }
         )

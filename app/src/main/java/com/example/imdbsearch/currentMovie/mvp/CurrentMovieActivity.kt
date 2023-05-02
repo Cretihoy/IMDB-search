@@ -45,7 +45,7 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
 
     override fun showMovie(movie: CurrentMovieModel) {
         poster.load(movie.posterUrl)
-        title.text = movie.title
+        title.text = movie.fullTitle
         description.text = movie.description
         adapter.setItems(movie.actors)
     }
