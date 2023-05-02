@@ -26,6 +26,7 @@ class CurrentMovieAdapter() : RecyclerView.Adapter<CurrentMovieViewHolder>() {
         val actor = items[position]
         holder.run {
             name.text = actor.name
+            characterName.text = actor.asCharacter
             image.load(actor.imageUrl)
         }
     }

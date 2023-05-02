@@ -10,4 +10,5 @@ class CurrentMovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     val image: ImageView by lazy { itemView.findViewById(R.id.item_base_image) }
     val name: TextView by lazy { itemView.findViewById(R.id.item_base_name) }
+    val characterName: TextView by lazy { itemView.findViewById(R.id.item_base_character_name) }
 }
