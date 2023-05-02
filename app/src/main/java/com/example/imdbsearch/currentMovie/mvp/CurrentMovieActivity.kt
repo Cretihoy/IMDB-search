@@ -1,12 +1,8 @@
 package com.example.imdbsearch.currentMovie.mvp
 
-import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
-import android.widget.MediaController
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.domain.model.CurrentMovieModel
@@ -29,8 +25,8 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
     private val runtime: TextView by lazy { findViewById(R.id.current_movie_runtime) }
     private val rating: TextView by lazy { findViewById(R.id.current_movie_rating) }
     private val genres: TextView by lazy { findViewById(R.id.current_movie_genres) }
-    val recycler: RecyclerView by lazy { findViewById(R.id.current_movie_recycler_actor) }
-    val adapter = CurrentMovieAdapter()
+    private val recycler: RecyclerView by lazy { findViewById(R.id.current_movie_recycler_actor) }
+    private val adapter = CurrentMovieAdapter()
 
     @Inject
     lateinit var presenterProvider: Provider<CurrentMoviePresenter>
