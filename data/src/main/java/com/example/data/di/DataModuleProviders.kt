@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-private const val BASE_URL = "https://imdb-api.com/"
+private const val BASE_URL = "https://imdb-api.com/en/"
 private const val TIMEOUT = 10L
 
 @Module
