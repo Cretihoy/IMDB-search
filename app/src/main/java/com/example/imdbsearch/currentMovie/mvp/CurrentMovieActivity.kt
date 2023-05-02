@@ -3,9 +3,11 @@ package com.example.imdbsearch.currentMovie.mvp
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.domain.model.CurrentMovieModel
 import com.example.imdbsearch.R
+import com.example.imdbsearch.currentMovie.recycler.CurrentMovieAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
@@ -20,6 +22,8 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
     private val poster: ImageView by lazy { findViewById(R.id.current_movie_poster) }
     private val title: TextView by lazy { findViewById(R.id.current_movie_title) }
     private val description: TextView by lazy { findViewById(R.id.current_movie_description) }
+    val recycler: RecyclerView by lazy { findViewById(R.id.current_movie_recycler_actor) }
+    val adapter = CurrentMovieAdapter()
 
     @Inject
     lateinit var presenterProvider: Provider<CurrentMoviePresenter>
@@ -35,11 +39,14 @@ class CurrentMovieActivity : MvpAppCompatActivity(), CurrentMovieView {
         } else {
             presenter.loadMovieById(id)
         }
+
+        recycler.adapter = adapter
     }
 
     override fun showMovie(movie: CurrentMovieModel) {
         poster.load(movie.posterUrl)
         title.text = movie.title
         description.text = movie.description
+        adapter.setItems(movie.actors)
     }
 }
