@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Imdb search</string>
     <string name="search_button">Search</string>
+    <string name="stars">Stars</string>
 </resources>

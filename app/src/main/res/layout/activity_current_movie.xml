@@ -75,6 +75,16 @@
         android:textSize="@dimen/text_medium_size"
         tools:text="This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero. This is super cat. He lives in France. He is Hero" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/stars"
+        android:textColor="?colorOnSecondary"
+        android:textSize="@dimen/text_big_size"
+        android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/current_movie_recycler_actor"
         android:layout_width="match_parent"
