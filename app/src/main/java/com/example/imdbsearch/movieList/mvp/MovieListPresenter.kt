@@ -15,6 +15,7 @@ class MovieListPresenter
 ) : MvpPresenter<MovieListView>() {
 
     fun onSearchButtonClicked(name: String) {
+        viewState.startProgressBar()
         loadMoviesByName(name)
     }
 
@@ -22,6 +23,7 @@ class MovieListPresenter
         CoroutineScope(Dispatchers.Main).launch {
             val movies = repository.getMoviesByName(name)
             viewState.showMovies(movies)
+            viewState.stopProgressBar()
         }
     }
 

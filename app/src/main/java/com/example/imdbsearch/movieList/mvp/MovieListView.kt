@@ -9,6 +9,12 @@ import moxy.viewstate.strategy.StateStrategyType
 interface MovieListView : MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
+    fun startProgressBar()
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun stopProgressBar()
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
     fun showMovies(movies: List<MovieModel>)
 
     @StateStrategyType(SkipStrategy::class)

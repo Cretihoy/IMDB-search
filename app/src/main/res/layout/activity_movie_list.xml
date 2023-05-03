@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".movieList.mvp.MovieListActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar_activity_movie_list"
+        android:layout_width="@dimen/progressBarSize"
+        android:layout_height="@dimen/progressBarSize"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/movie_list_recycler"
         android:layout_width="match_parent"
